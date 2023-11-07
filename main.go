@@ -308,6 +308,8 @@ func main() {
 
 	var password string
 
+	fmt.Println("Welcome to password generator")
+
 	// decide if password is random or not
 	random, err := getUserInput("Random password? (y/n): ")
 
