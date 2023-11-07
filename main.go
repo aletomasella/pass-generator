@@ -7,7 +7,9 @@ import (
 	"math/big"
 	"math/rand"
 	"os"
+	"os/user"
 	"strconv"
+	"strings"
 )
 
 const (
@@ -307,8 +309,14 @@ func scramblePassword(password string) string {
 func main() {
 
 	var password string
+	currentUser, err := user.Current()
 
-	fmt.Println("Welcome to password generator")
+	if err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
+
+	fmt.Println("Welcome to password generator " + strings.ToUpper(currentUser.Username) + "!")
 
 	// decide if password is random or not
 	random, err := getUserInput("Random password? (y/n): ")
