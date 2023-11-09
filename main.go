@@ -316,6 +316,11 @@ func main() {
 		os.Exit(1)
 	}
 
+	if currentUser.Username == "root" {
+		fmt.Println("You should not run this program as root")
+		os.Exit(1)
+	}
+
 	fmt.Println("Welcome to password generator " + strings.ToUpper(currentUser.Username) + "!")
 
 	// decide if password is random or not
