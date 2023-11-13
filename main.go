@@ -316,6 +316,8 @@ func main() {
 		os.Exit(1)
 	}
 
+	fmt.Println("Current home Directory: " + currentUser.HomeDir)
+
 	if currentUser.Username == "root" {
 		fmt.Println("You should not run this program as root")
 		os.Exit(1)
